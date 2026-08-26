@@ -8,11 +8,11 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import AnnouncementBar from "../components/AnnouncementBar.jsx";
 
-import "./Cart.css";
+import styles from "./Cart.module.css";
 
 function Cart() {
   // Checkout message
@@ -105,13 +105,15 @@ function Cart() {
 
       <Navbar />
 
-      <div className="cart-page">
+      {/* ================= CART PAGE ================= */}
+
+      <div className={styles["cart-page"]}>
 
         {/* ================= HERO ================= */}
 
-        <section className="cart-hero">
+        <section className={styles["cart-hero"]}>
 
-          <div className="cart-breadcrumb">
+          <div className={styles["cart-breadcrumb"]}>
 
             <Link to="/">
               Home
@@ -138,13 +140,13 @@ function Cart() {
 
         {/* ================= CART ================= */}
 
-        <section className="cart-container">
+        <section className={styles["cart-container"]}>
 
           {cart.length === 0 ? (
 
-            /* EMPTY CART */
+            /* ================= EMPTY CART ================= */
 
-            <div className="empty-cart">
+            <div className={styles["empty-cart"]}>
 
               <ShoppingBag size={70} />
 
@@ -159,7 +161,7 @@ function Cart() {
 
               <Link
                 to="/shop"
-                className="continue-shopping"
+                className={styles["continue-shopping"]}
               >
                 <ArrowLeft size={18} />
                 Continue Shopping
@@ -169,15 +171,15 @@ function Cart() {
 
           ) : (
 
-            /* CART WITH PRODUCTS */
+            /* ================= CART WITH PRODUCTS ================= */
 
-            <div className="cart-layout">
+            <div className={styles["cart-layout"]}>
 
               {/* ================= CART ITEMS ================= */}
 
-              <div className="cart-items">
+              <div className={styles["cart-items"]}>
 
-                <div className="cart-header">
+                <div className={styles["cart-header"]}>
 
                   <h2>
                     Shopping Cart
@@ -185,7 +187,7 @@ function Cart() {
 
                   <button
                     onClick={clearCart}
-                    className="clear-cart"
+                    className={styles["clear-cart"]}
                   >
                     Clear Cart
                   </button>
@@ -193,16 +195,18 @@ function Cart() {
                 </div>
 
 
+                {/* ================= PRODUCTS ================= */}
+
                 {cart.map((item) => (
 
                   <div
-                    className="cart-item"
+                    className={styles["cart-item"]}
                     key={item.id}
                   >
 
                     {/* Image */}
 
-                    <div className="cart-image">
+                    <div className={styles["cart-image"]}>
 
                       <img
                         src={item.image}
@@ -214,7 +218,7 @@ function Cart() {
 
                     {/* Information */}
 
-                    <div className="cart-info">
+                    <div className={styles["cart-info"]}>
 
                       <span>
                         {item.category}
@@ -233,7 +237,7 @@ function Cart() {
 
                     {/* Quantity */}
 
-                    <div className="quantity">
+                    <div className={styles["quantity"]}>
 
                       <button
                         onClick={() =>
@@ -262,7 +266,7 @@ function Cart() {
 
                     {/* Item Total */}
 
-                    <div className="item-total">
+                    <div className={styles["item-total"]}>
 
                       $
                       {(
@@ -276,7 +280,7 @@ function Cart() {
                     {/* Remove */}
 
                     <button
-                      className="remove-item"
+                      className={styles["remove-item"]}
                       onClick={() =>
                         removeFromCart(item.id)
                       }
@@ -294,7 +298,7 @@ function Cart() {
 
                 <Link
                   to="/shop"
-                  className="continue-link"
+                  className={styles["continue-link"]}
                 >
                   <ArrowLeft size={17} />
                   Continue Shopping
@@ -305,14 +309,14 @@ function Cart() {
 
               {/* ================= ORDER SUMMARY ================= */}
 
-              <aside className="cart-summary">
+              <aside className={styles["cart-summary"]}>
 
                 <h2>
                   Order Summary
                 </h2>
 
 
-                <div className="summary-line">
+                <div className={styles["summary-line"]}>
 
                   <span>
                     Subtotal
@@ -325,7 +329,7 @@ function Cart() {
                 </div>
 
 
-                <div className="summary-line">
+                <div className={styles["summary-line"]}>
 
                   <span>
                     Shipping
@@ -338,10 +342,10 @@ function Cart() {
                 </div>
 
 
-                <div className="summary-divider"></div>
+                <div className={styles["summary-divider"]}></div>
 
 
-                <div className="summary-total">
+                <div className={styles["summary-total"]}>
 
                   <span>
                     Total
@@ -357,7 +361,7 @@ function Cart() {
                 {/* Checkout Button */}
 
                 <button
-                  className="checkout-btn"
+                  className={styles["checkout-btn"]}
                   onClick={handleCheckout}
                 >
                   Proceed to Checkout
@@ -368,9 +372,9 @@ function Cart() {
 
                 {checkoutMessage && (
 
-                  <div className="checkout-message">
+                  <div className={styles["checkout-message"]}>
 
-                    <span className="success-icon">
+                    <span className={styles["success-icon"]}>
                       ✓
                     </span>
 
@@ -391,7 +395,7 @@ function Cart() {
                 )}
 
 
-                <p className="secure-text">
+                <p className={styles["secure-text"]}>
                   🔒 Secure checkout
                 </p>
 
@@ -406,7 +410,6 @@ function Cart() {
       </div>
 
       <Footer />
-
     </>
   );
 }
