@@ -1,0 +1,179 @@
+.page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 42px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.header p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.header strong {
+  color: var(--color-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.inputWrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.inputWrapper input::placeholder {
+  color: var(--color-text-light);
+}
+
+.passwordButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.passwordButton:hover {
+  color: var(--color-primary);
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.terms input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+}
+
+.terms a,
+.login a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.terms a:hover,
+.login a:hover {
+  color: var(--color-primary-dark);
+}
+
+.form button[type="submit"] {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.login {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.error {
+  margin: 0;
+  color: #d64545;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.successMessage {
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 40px 16px;
+  }
+
+  .card {
+    padding: 30px 22px;
+    border-radius: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,43 @@
+.card {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.imageWrap {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.05);
+}
+
+.title {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.count {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
