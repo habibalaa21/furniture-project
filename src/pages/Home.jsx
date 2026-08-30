@@ -3,6 +3,10 @@ import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
 import Footer from "../components/Footer";
 import Categories from "../components/Categories.jsx";
+import FeaturedProducts from "../components/FeaturedProducts.jsx";
+import HomeBanner from "../components/HomeBanner.jsx";
+import WhyChooseUs from "../components/WhyChooseUs.jsx";
+
 
 export default function Home() {
   return (
@@ -11,7 +15,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Categories />
+        {/* <Categories /> */}
+        <FeaturedProducts />
+        <HomeBanner />
+        <WhyChooseUs />
       </main>
       <Footer />
     </>

@@ -5,16 +5,17 @@ import styles from "./Button.module.css";
  * Reusable button.
  * variant: "primary" | "secondary"
  * withArrow: shows a trailing arrow icon (used for primary CTAs)
+ * as: "button" (default) | "a" | any component (e.g. React Router's Link)
+ * ...rest: forwarded to whatever "as" renders (href, to, onClick, etc.)
  */
 export default function Button({
   children,
   variant = "primary",
   withArrow = false,
   as = "button",
-  href,
-  onClick,
   type = "button",
   className = "",
+  ...rest
 }) {
   const classes = `${styles.btn} ${styles[variant]} ${className}`;
 
@@ -25,17 +26,20 @@ export default function Button({
     </>
   );
 
-  if (as === "a") {
+  // "as" can be a string tag ("a", "button") or an actual component (Link, NavLink, etc.)
+  const Component = as;
+
+  if (Component === "button") {
     return (
-      <a href={href} className={classes} onClick={onClick}>
+      <button type={type} className={classes} {...rest}>
         {content}
-      </a>
+      </button>
     );
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <Component className={classes} {...rest}>
       {content}
-    </button>
+    </Component>
   );
 }

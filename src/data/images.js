@@ -3,9 +3,9 @@
 // every component below imports from this file, so nothing else needs to change.
 
 export const images = {
-  // Hero showcase
-  livingRoom: "https://placehold.co/800x600/E7F0EA/176B45?text=Living+Room",
-  bedroom: "https://placehold.co/600x500/FCFBF8/176B45?text=Bed+Room",
+  // // Hero showcase
+  // livingRoom: "https://placehold.co/800x600/E7F0EA/176B45?text=Living+Room",
+  // bedroom: "https://placehold.co/600x500/FCFBF8/176B45?text=Bed+Room",
 
   // Customer rating avatars
   avatar1: "https://placehold.co/80x80/176B45/FFFFFF?text=A",

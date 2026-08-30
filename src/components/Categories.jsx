@@ -3,10 +3,10 @@ import CategoryCard from "./CategoryCard.jsx";
 import styles from "./Categories.module.css";
 
 const CATEGORIES = [
-  { image: images.categoryLiving, title: "Living Room", itemCount: "2,500+ Items" },
-  { image: images.categoryBedroom, title: "Bed Room", itemCount: "1,500+ Items" },
-  { image: images.categoryDining, title: "Dining Room", itemCount: "980+ Items" },
-  { image: images.categoryOffice, title: "Home Office", itemCount: "720+ Items" },
+  { image: "/images/livingroom.jpg", title: "Living Room", itemCount: "2,500+ Items" },
+  { image: "/images/Bedroom.jpg", title: "Bed Room", itemCount: "1,500+ Items" },
+  { image: "/images/diningroom.jpg", title: "Dining Room", itemCount: "980+ Items" },
+  { image: "/images/officeroom.jpg", title: "Home Office", itemCount: "720+ Items" },
 ];
 
 export default function Categories() {

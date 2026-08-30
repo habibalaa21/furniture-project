@@ -1,0 +1,227 @@
+.homeBanner {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+
+  background-image: url("/images/offer-background.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(8, 35, 25, 0.8) 0%,
+    rgba(8, 35, 25, 0.5) 45%,
+    rgba(8, 35, 25, 0.12) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 600px;
+
+  padding: 60px;
+
+  color: white;
+}
+
+.label {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.content h2 {
+  margin: 0 0 10px;
+
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+
+  color: #d9eee4;
+}
+
+.content h1 {
+  margin: 0 0 18px;
+
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.content p {
+  margin: 0 0 28px;
+
+  font-size: 17px;
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.shopButton {
+  border: none;
+  border-radius: 30px;
+
+  padding: 14px 25px;
+
+  background: #176b4d;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.shopButton span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.shopButton:hover {
+  transform: translateY(-2px);
+  background: #125a40;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1024px) {
+
+  .homeBanner {
+    min-height: 400px;
+    background-position: center;
+  }
+
+  .content {
+    max-width: 520px;
+    padding: 45px;
+  }
+
+  .content h2 {
+    font-size: 52px;
+  }
+
+  .content h1 {
+    font-size: 36px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .homeBanner {
+    min-height: 500px;
+
+    /*
+      Move the image slightly to the right
+      so the text has more space on the left.
+    */
+    background-position: 60% center;
+
+    border-radius: 18px;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 35, 25, 0.88) 0%,
+      rgba(8, 35, 25, 0.65) 55%,
+      rgba(8, 35, 25, 0.25) 100%
+    );
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 40px 30px;
+  }
+
+  .label {
+    margin-bottom: 16px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  .content h2 {
+    margin-bottom: 10px;
+    font-size: 46px;
+  }
+
+  .content h1 {
+    margin-bottom: 15px;
+    font-size: 32px;
+  }
+
+  .content p {
+    margin-bottom: 24px;
+    font-size: 15px;
+    max-width: 400px;
+  }
+
+  .shopButton {
+    padding: 13px 22px;
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+  .homeBanner {
+    min-height: 460px;
+    background-position: 62% center;
+  }
+
+  .content {
+    padding: 35px 22px;
+  }
+
+  .content h2 {
+    font-size: 40px;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .shopButton {
+    padding: 12px 20px;
+  }
+}

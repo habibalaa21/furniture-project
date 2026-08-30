@@ -1,6 +1,8 @@
 import { Home as HomeIcon } from "lucide-react";
 import Button from "./Button.jsx";
 import Rating from "./Rating.jsx";
+import { Link } from "react-router-dom";
+
 import FurnitureShowcase from "./FurnitureShowcase.jsx";
 import styles from "./Hero.module.css";
 
@@ -28,10 +30,10 @@ export default function Hero() {
           </p>
 
           <div className={styles.actions}>
-            <Button variant="primary" withArrow as="a" href="#shop">
+            <Button variant="primary" withArrow as= {Link} to="/shop">
               Shop Now
             </Button>
-            <Button variant="secondary" as="a" href="#shop">
+            <Button variant="secondary" as={Link} to="">
               View All Products
             </Button>
           </div>

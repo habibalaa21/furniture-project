@@ -3,28 +3,37 @@ import products from "../data/productData";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AnnouncementBar from "../components/AnnouncementBar.jsx";
+import { useAuth } from "../AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
+
 import "./Shop.css";
 
 function Shop() {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
+
   const [category, setCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("Popular");
 
-  // Cart
+  // ================= CART =================
+
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Wishlist
+  // ================= WISHLIST =================
+
   const [wishlist, setWishlist] = useState(() => {
     const savedWishlist = localStorage.getItem("wishlist");
 
     return savedWishlist ? JSON.parse(savedWishlist) : [];
   });
 
-  // Message
+  // ================= MESSAGE =================
+
   const [message, setMessage] = useState("");
 
   const categories = [
@@ -36,18 +45,22 @@ function Shop() {
     "Outdoor",
   ];
 
-  // Save Cart
+  // ================= SAVE CART =================
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Save Wishlist
+  // ================= SAVE WISHLIST =================
+
   useEffect(() => {
     localStorage.setItem(
       "wishlist",
       JSON.stringify(wishlist)
     );
   }, [wishlist]);
+
+  // ================= FILTER PRODUCTS =================
 
   let filteredProducts = products.filter((product) => {
     const matchesCategory =
@@ -60,6 +73,8 @@ function Shop() {
 
     return matchesCategory && matchesSearch;
   });
+
+  // ================= SORT =================
 
   if (sort === "Low to High") {
     filteredProducts.sort(
@@ -79,15 +94,34 @@ function Shop() {
     );
   }
 
-  // ================= CART =================
+  // =====================================================
+  // ADD TO CART
+  // =====================================================
 
   const addToCart = (product) => {
+
+    // IMPORTANT:
+    // User must login first
+
+    if (!isLoggedIn) {
+      setMessage("Please login first to add products to your cart.");
+
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
+
+      return;
+    }
+
+    // User is logged in
     setCart((prevCart) => {
+
       const existingProduct = prevCart.find(
         (item) => item.id === product.id
       );
 
       if (existingProduct) {
+
         return prevCart.map((item) =>
           item.id === product.id
             ? {
@@ -96,6 +130,7 @@ function Shop() {
               }
             : item
         );
+
       }
 
       return [
@@ -107,32 +142,39 @@ function Shop() {
       ];
     });
 
-    // Show message
     setMessage(`${product.name} added to cart ✓`);
 
-    // Hide message after 2.5 seconds
     setTimeout(() => {
       setMessage("");
     }, 2500);
   };
 
-  // ================= WISHLIST =================
+  // =====================================================
+  // WISHLIST
+  // =====================================================
 
   const toggleWishlist = (product) => {
+
     setWishlist((prevWishlist) => {
+
       const alreadyExists = prevWishlist.some(
         (item) => item.id === product.id
       );
 
       if (alreadyExists) {
-        setMessage(`${product.name} removed from wishlist`);
+
+        setMessage(
+          `${product.name} removed from wishlist`
+        );
 
         return prevWishlist.filter(
           (item) => item.id !== product.id
         );
       }
 
-      setMessage(`${product.name} added to wishlist ♥`);
+      setMessage(
+        `${product.name} added to wishlist ♥`
+      );
 
       return [...prevWishlist, product];
     });
@@ -141,6 +183,10 @@ function Shop() {
       setMessage("");
     }, 2500);
   };
+
+  // =====================================================
+  // CHECK WISHLIST
+  // =====================================================
 
   const isInWishlist = (productId) => {
     return wishlist.some(
@@ -154,7 +200,8 @@ function Shop() {
 
       <Navbar />
 
-      {/* Message */}
+      {/* ================= MESSAGE ================= */}
+
       {message && (
         <div className="cart-message">
           {message}
@@ -192,7 +239,6 @@ function Shop() {
 
         </section>
 
-
         {/* ================= CATEGORIES ================= */}
 
         <section className="categories">
@@ -213,7 +259,6 @@ function Shop() {
 
         </section>
 
-
         {/* ================= SHOP CONTENT ================= */}
 
         <section className="shop-container">
@@ -226,7 +271,6 @@ function Shop() {
               <h3>Filters</h3>
               <span>☷</span>
             </div>
-
 
             {/* Category */}
 
@@ -254,7 +298,6 @@ function Shop() {
               ))}
 
             </div>
-
 
             {/* Price */}
 
@@ -296,7 +339,6 @@ function Shop() {
 
             </div>
 
-
             {/* Rating */}
 
             <div className="filter-section">
@@ -331,7 +373,6 @@ function Shop() {
 
           </aside>
 
-
           {/* ================= PRODUCTS ================= */}
 
           <main className="products-area">
@@ -349,7 +390,6 @@ function Shop() {
                 </p>
 
               </div>
-
 
               <div className="shop-actions">
 
@@ -378,8 +418,7 @@ function Shop() {
 
             </div>
 
-
-            {/* Products Grid */}
+            {/* ================= PRODUCTS GRID ================= */}
 
             <div className="products-grid">
 
@@ -399,7 +438,6 @@ function Shop() {
                         -{product.discount}%
                       </span>
                     )}
-
 
                     {/* Wishlist */}
 
@@ -423,14 +461,12 @@ function Shop() {
                         : "♡"}
                     </button>
 
-
                     <img
                       src={product.image}
                       alt={product.name}
                     />
 
                   </div>
-
 
                   {/* Product Info */}
 
@@ -443,7 +479,6 @@ function Shop() {
                     <h3>
                       {product.name}
                     </h3>
-
 
                     {/* Rating */}
 
@@ -460,7 +495,6 @@ function Shop() {
 
                     </div>
 
-
                     {/* Price */}
 
                     <div className="price">
@@ -476,7 +510,6 @@ function Shop() {
                       )}
 
                     </div>
-
 
                     {/* Add To Cart */}
 
@@ -496,7 +529,6 @@ function Shop() {
               ))}
 
             </div>
-
 
             {/* No Products */}
 

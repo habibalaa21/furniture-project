@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Search,
   ShoppingCart,
@@ -14,15 +14,20 @@ import styles from "./Navbar.module.css";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
-  { label: "Categories", href: "/categories" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
   { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Search
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   // Detect scrolling
   useEffect(() => {
@@ -50,6 +55,24 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  // ================= SEARCH =================
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const value = searchText.trim();
+
+    if (!value) {
+      return;
+    }
+
+    // Go to Shop with search value
+    navigate(`/shop?search=${encodeURIComponent(value)}`);
+
+    // Close search
+    setIsSearchOpen(false);
+  };
+
   return (
     <header
       className={`${styles.navbar} ${
@@ -59,6 +82,7 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
 
         {/* ================= LOGO ================= */}
+
         <Link to="/" className={styles.logo}>
           <span
             className={styles.logoMark}
@@ -73,8 +97,8 @@ export default function Navbar() {
           Furniture.
         </Link>
 
-
         {/* ================= DESKTOP NAVIGATION ================= */}
+
         <nav
           className={styles.navLinks}
           aria-label="Main navigation"
@@ -90,24 +114,55 @@ export default function Navbar() {
           </ul>
         </nav>
 
-
         {/* ================= ACTIONS ================= */}
+
         <div className={styles.actions}>
 
           {/* Search */}
-          <button
-            className={styles.iconBtn}
-            aria-label="Search"
-            type="button"
-          >
-            <Search
-              size={20}
-              strokeWidth={1.8}
-            />
-          </button>
 
+          {isSearchOpen ? (
+            <form
+              className={styles.searchForm}
+              onSubmit={handleSearch}
+            >
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchText}
+                onChange={(e) =>
+                  setSearchText(e.target.value)
+                }
+                autoFocus
+              />
+
+              <button
+                type="button"
+                className={styles.searchClose}
+                onClick={() => {
+                  setIsSearchOpen(false);
+                  setSearchText("");
+                }}
+                aria-label="Close search"
+              >
+                <X size={18} />
+              </button>
+            </form>
+          ) : (
+            <button
+              className={styles.iconBtn}
+              aria-label="Search"
+              type="button"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <Search
+                size={20}
+                strokeWidth={1.8}
+              />
+            </button>
+          )}
 
           {/* Shopping Cart */}
+
           <Link
             to="/cart"
             className={styles.iconBtn}
@@ -119,8 +174,8 @@ export default function Navbar() {
             />
           </Link>
 
-
           {/* Profile */}
+
           <Link
             to="/profile"
             className={styles.iconBtn}
@@ -132,8 +187,8 @@ export default function Navbar() {
             />
           </Link>
 
-
           {/* Mobile Menu Button */}
+
           <button
             className={`${styles.iconBtn} ${styles.hamburger}`}
             aria-label={
@@ -157,8 +212,8 @@ export default function Navbar() {
         </div>
       </div>
 
-
       {/* ================= MOBILE DRAWER ================= */}
+
       <div
         className={`${styles.drawer} ${
           isMenuOpen
@@ -167,7 +222,6 @@ export default function Navbar() {
         }`}
       >
         <ul>
-
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <Link
@@ -181,8 +235,8 @@ export default function Navbar() {
             </li>
           ))}
 
-
           {/* Profile */}
+
           <li>
             <Link
               to="/profile"
@@ -193,7 +247,6 @@ export default function Navbar() {
               Profile
             </Link>
           </li>
-
         </ul>
       </div>
     </header>
