@@ -1,65 +1,199 @@
-# Furniture. — Home Page
+# Furniture Store
 
-A modern, responsive furniture e-commerce home page built with React + Vite.
+<p align="center">
+  A modern furniture e-commerce website built with React.js
+</p>
 
-## Setup
+<p align="center">
+  <strong>Browse. Discover. Furnish.</strong>
+</p>
+
+---
+
+## About
+
+Furniture Store is a modern and responsive e-commerce website designed for browsing and exploring furniture products.
+
+The website provides a clean and user-friendly interface with organized product sections, authentication pages, user profile management, wishlist, and shopping cart functionality.
+
+The project was developed using React.js with a focus on reusable components, responsive design, and smooth navigation.
+
+---
+
+## Features
+
+### Home
+
+* Modern landing page
+* Featured furniture sections
+* Navigation to different areas of the website
+
+### Shop
+
+* Browse furniture products
+* Product cards
+* Product search and exploration
+* Responsive product layout
+
+### Product Details
+
+* Product information
+* Product images
+* Price and description
+* Add products to cart
+
+### User Account
+
+* Login
+* Registration
+* Profile page
+* Edit profile information
+* Logout
+
+### Wishlist & Cart
+
+* Add products to wishlist
+* Remove products from wishlist
+* Add products to cart
+* Manage selected products
+
+### Responsive Design
+
+The website is responsive and designed to provide a consistent experience across desktop, tablet, and mobile devices.
+
+---
+
+## Tech Stack
+
+| Technology   | Usage                   |
+| ------------ | ----------------------- |
+| React.js     | User Interface          |
+| JavaScript   | Application Logic       |
+| HTML5        | Structure               |
+| CSS3         | Styling                 |
+| Vite         | Development Environment |
+| React Router | Navigation              |
+| Lucide React | Icons                   |
+| Git          | Version Control         |
+| GitHub       | Collaboration           |
+
+---
+
+## Project Structure
+
+```text
+src/
+│
+├── assets/
+│
+├── components/
+│
+├── pages/
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+* Node.js
+* npm
+* Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/habibalaa21/furniture-project.git
+```
+
+Navigate to the project:
+
+```bash
+cd furniture-project
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Then open the local URL Vite prints (usually `http://localhost:5173`).
+Open the local development URL provided by Vite in your browser.
 
-To build for production:
+---
 
-```bash
-npm run build
-npm run preview
-```
+## Screenshots
 
-## Replacing images
+### Home Page
 
-All images are centralized in `src/data/images.js`. Swap any placeholder URL
-there and it updates everywhere that image is used — no component edits
-needed.
+*Add Home page screenshot here.*
 
-## Structure
+### Shop Page
 
-```
-src/
-  components/
-    AnnouncementBar.jsx      Top dark-green bar (phone, promo, socials)
-    Navbar.jsx                Sticky header with mobile drawer
-    Hero.jsx                  Two-column hero (heading, CTAs, rating, showcase)
-    Rating.jsx                Overlapping avatars + rating text
-    FurnitureShowcase.jsx     Living room / bedroom image cards + floating nav buttons
-    CategoryCard.jsx          Single category card (image + label + count)
-    Categories.jsx            "Shop by Room" grid section
-    Button.jsx                Reusable primary/secondary button
-  data/
-    images.js                 Centralized image URLs — edit here only
-  pages/
-    Home.jsx                  Composes the full page
-  App.jsx
-  main.jsx
-  index.css                   Design tokens (colors, type, radius, shadow) + resets
-```
+*Add Shop page screenshot here.*
 
-## Design tokens
+### Product Details
 
-| Token | Value |
-|---|---|
-| Primary (forest green) | `#176B45` |
-| Accent (gold) | `#F5C400` |
-| Background | `#FCFBF8` |
-| Text | `#1B1B18` |
-| Muted text | `#6B6B63` |
+*Add Product Details screenshot here.*
 
-Fonts: **Poppins** for headings, **Manrope** for body text (loaded from Google Fonts in `index.html`).
+### Login & Registration
 
-## Responsive behavior
+*Add Login and Registration screenshots here.*
 
-- **Desktop (>900px):** full nav, two-column hero, 4-column category grid.
-- **Tablet (640–900px):** hero stacks, nav collapses to hamburger, 2-column category grid.
-- **Mobile (<640px):** announcement bar simplifies, secondary bedroom card and floating arrows hide from the hero to avoid overflow, buttons go full-width. Tested down to 320px with no horizontal scroll.
+### Profile
+
+*Add Profile page screenshot here.*
+
+### Wishlist
+
+*Add Wishlist screenshot here.*
+
+### Shopping Cart
+
+*Add Shopping Cart screenshot here.*
+
+---
+
+## Team
+
+| Name           | Role               |
+| -------------- | ------------------ |
+| Habiba Alaa    | Frontend Developer |
+| Shorouk Azzazy | Frontend Developer |
+
+---
+
+## Future Improvements
+
+* Backend API integration
+* Database integration
+* Online payment
+* Order management
+* Admin dashboard
+* Product reviews and ratings
+
+---
+
+## Project Purpose
+
+This project was developed as a practical React.js project to apply frontend development concepts including component-based architecture, routing, responsive design, user interfaces, and GitHub collaboration.
+
+---
+
+## License
+
+This project is developed for educational purposes.
