@@ -1,0 +1,203 @@
+.section {
+  width: 100%;
+  padding: 90px 0;
+  background-color: #f7faf8;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+  padding: 0 20px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: #176b4d;
+}
+
+.header h2 {
+  margin: 0 0 14px;
+
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: #17231d;
+}
+
+.header h2 span {
+  color: #176b4d;
+}
+
+.header p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: #737b76;
+}
+
+
+/* =========================
+   FEATURES
+   ========================= */
+
+.features {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 0 25px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================
+   FEATURE CARD
+   ========================= */
+
+.featureCard {
+  padding: 35px 25px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e3ebe6;
+  border-radius: 18px;
+
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px);
+
+  border-color: #c8ddd2;
+
+  box-shadow: 0 12px 30px rgba(23, 107, 77, 0.08);
+}
+
+
+/* =========================
+   ICON
+   ========================= */
+
+.icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #e8f3ed;
+
+  font-size: 27px;
+
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .icon {
+  background-color: #176b4d;
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.featureCard h3 {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #17231d;
+}
+
+
+/* =========================
+   DESCRIPTION
+   ========================= */
+
+.featureCard p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: #7a827d;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .header {
+    margin-bottom: 35px;
+  }
+
+  .header h2 {
+    font-size: 32px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    padding: 0 20px;
+  }
+
+  .featureCard {
+    padding: 30px 22px;
+  }
+}

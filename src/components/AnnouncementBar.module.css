@@ -1,0 +1,82 @@
+.bar {
+  background: var(--color-primary-dark);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.callUs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.callUs:hover {
+  color: var(--color-accent);
+}
+
+.promo {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.signupLink {
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.signupLink:hover {
+  color: var(--color-white);
+}
+
+.social {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.social a {
+  display: flex;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.social a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .callUs span {
+    display: none;
+  }
+  .social {
+    display: none;
+  }
+  .promo {
+    text-align: left;
+  }
+  .inner {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo {
+    font-size: 0.72rem;
+  }
+}

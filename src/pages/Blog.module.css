@@ -1,0 +1,168 @@
+.blogPage {
+  min-height: 100vh;
+  background: #f8faf9;
+}
+
+.blogHero {
+  padding: 100px 8%;
+  background: #f7f1ee;
+  text-align: center;
+}
+
+.blogHeroContent {
+  max-width: 800px;
+  margin: auto;
+}
+
+.blogSubtitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.blogHero h1 {
+  font-size: 52px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.blogHero h1 span {
+  display: block;
+}
+
+.blogIntro {
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.blogSection {
+  padding: 80px 8%;
+}
+
+.blogHeading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blogHeading h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.blogHeading p {
+  color: #666;
+  font-size: 17px;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.blogCard {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blogImage {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blogImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blogCard:hover img {
+  transform: scale(1.05);
+}
+
+.blogContent {
+  padding: 25px;
+}
+
+.blogMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.blogMeta span:first-child {
+  font-weight: 700;
+}
+
+.blogMeta span:last-child {
+  color: #777;
+}
+
+.blogContent h3 {
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.blogContent p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.readMore {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .blogGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogHero h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogHero {
+    padding: 70px 6%;
+  }
+
+  .blogHero h1 {
+    font-size: 34px;
+  }
+
+  .blogSection {
+    padding: 60px 6%;
+  }
+}

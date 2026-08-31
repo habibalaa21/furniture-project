@@ -1,0 +1,940 @@
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+.profilePage {
+  min-height: 100vh;
+  background: #f7faf8;
+  color: #171717;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.pageHeader {
+  background: #edf5f1;
+  padding: 55px 8%;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.breadcrumb span:first-child {
+  color: #16815f;
+  font-weight: 500;
+}
+
+.breadcrumb span:last-child {
+  color: #777;
+}
+
+.pageHeader h1 {
+  font-size: 42px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.pageHeader p {
+  color: #61717c;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.profileContainer {
+  width: 90%;
+  max-width: 1250px;
+  margin: 45px auto 70px;
+
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 35px;
+
+  align-items: start;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+  position: sticky;
+  top: 90px;
+}
+
+.userBox {
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 95px;
+  height: 95px;
+
+  border-radius: 50%;
+
+  background: #16815f;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImage {
+  width: 95px;
+  height: 95px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 3px solid #edf7f2;
+}
+
+.userBox h2 {
+  margin: 15px 0 5px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.userBox p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.menuItem {
+  width: 100%;
+
+  border: none;
+  background: transparent;
+
+  padding: 13px 15px;
+
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+  text-align: left;
+
+  color: #555;
+
+  transition: all 0.25s ease;
+}
+
+.menuItem svg {
+  flex-shrink: 0;
+}
+
+.menuItem:hover {
+  background: #edf7f2;
+  color: #16815f;
+  transform: translateX(2px);
+}
+
+.menuItem.active {
+  background: #16815f;
+  color: white;
+  box-shadow: 0 5px 15px rgba(22, 129, 95, 0.2);
+}
+
+.wishlistCount {
+  margin-left: auto;
+
+  background: #16815f;
+  color: white;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.menuItem.active .wishlistCount {
+  background: white;
+  color: #16815f;
+}
+
+.logout {
+  margin-top: 12px;
+  color: #d9534f;
+}
+
+.logout:hover {
+  background: #fff1f0;
+  color: #d9534f;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.mainContent {
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 40px;
+
+  min-height: 520px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* =====================================================
+   CONTENT HEADER
+===================================================== */
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #eeeeee;
+
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+
+.contentHeader h2 {
+  margin: 0 0 7px;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.contentHeader p {
+  margin: 0;
+
+  color: #777;
+  font-size: 15px;
+}
+
+.contentHeader > svg {
+  color: #16815f;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.editButton,
+.saveButton,
+.uploadButton {
+  border: none;
+
+  background: #16815f;
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+.editButton:hover,
+.saveButton:hover,
+.uploadButton:hover {
+  background: #116b4f;
+  transform: translateY(-1px);
+}
+
+.editActions {
+  display: flex;
+  gap: 10px;
+}
+
+.cancelButton {
+  border: 1px solid #ddd;
+
+  background: white;
+  color: #555;
+
+  padding: 12px 18px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.cancelButton:hover {
+  background: #f5f5f5;
+}
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+.photoSection {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  background: #f7faf8;
+
+  border-radius: 14px;
+
+  margin-bottom: 30px;
+}
+
+.editAvatar {
+  width: 85px;
+  height: 85px;
+
+  border-radius: 50%;
+
+  background: #16815f;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.editAvatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.photoSection h3 {
+  margin: 0 0 5px;
+}
+
+.photoSection p {
+  margin: 0 0 12px;
+
+  color: #777;
+  font-size: 13px;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.formGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+.inputGroup,
+.inputGroupFull {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.inputGroupFull {
+  grid-column: 1 / -1;
+}
+
+.inputGroup label,
+.inputGroupFull label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.inputGroup input,
+.inputGroupFull input {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #ddd;
+
+  padding: 13px 15px;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  background: #fafafa;
+
+  transition: 0.2s;
+}
+
+.inputGroup input:disabled,
+.inputGroupFull input:disabled {
+  color: #555;
+  cursor: default;
+}
+
+.inputGroup input:not(:disabled):focus,
+.inputGroupFull input:not(:disabled):focus {
+  border-color: #16815f;
+  background: white;
+
+  box-shadow: 0 0 0 3px rgba(22, 129, 95, 0.08);
+}
+
+/* =====================================================
+   INPUT WITH ICON
+===================================================== */
+
+.inputWithIcon {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  padding-left: 13px;
+
+  color: #16815f;
+
+  background: #fafafa;
+
+  transition: 0.2s;
+}
+
+.inputWithIcon:focus-within {
+  border-color: #16815f;
+
+  background: white;
+
+  box-shadow: 0 0 0 3px rgba(22, 129, 95, 0.08);
+}
+
+.inputWithIcon input {
+  border: none;
+
+  background: transparent;
+
+  width: 100%;
+}
+
+.inputWithIcon input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* =====================================================
+   ORDERS
+===================================================== */
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+/* Order Card */
+
+.orderCard {
+  border: 1px solid #e8ecea;
+
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  transition: all 0.25s ease;
+}
+
+.orderCard:hover {
+  border-color: #d8e7e0;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+  transform: translateY(-2px);
+}
+
+/* Order Header */
+
+.orderHeader {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 22px;
+
+  background: #f7faf8;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.orderHeader h3 {
+  margin: 0 0 5px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.orderHeader p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.orderHeader span {
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: #e7f6ef;
+
+  color: #16815f;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* Order Items */
+
+.orderItems {
+  padding: 5px 22px;
+}
+
+/* Single Product */
+
+.orderItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.orderItem:last-child {
+  border-bottom: none;
+}
+
+.orderItem img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  background: #f3f5f4;
+
+  border: 1px solid #eeeeee;
+
+  flex-shrink: 0;
+}
+
+/* Product Information */
+
+.orderItem > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.orderItem h4 {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #171717;
+}
+
+.orderItem p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+.orderItem strong {
+  font-size: 15px;
+
+  color: #16815f;
+}
+
+/* =====================================================
+   ORDER TOTAL
+===================================================== */
+
+.orderTotal {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  background: #fafcfb;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.orderTotal span {
+  font-size: 15px;
+
+  color: #555;
+}
+
+.orderTotal strong {
+  font-size: 19px;
+
+  color: #16815f;
+}
+
+/* =====================================================
+   EMPTY SECTION
+===================================================== */
+
+.emptySection {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #16815f;
+
+  text-align: center;
+}
+
+.emptySection h2 {
+  color: #171717;
+
+  margin: 15px 0 5px;
+
+  font-size: 22px;
+}
+
+.emptySection p {
+  color: #777;
+
+  margin: 0;
+}
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+.heartIcon {
+  color: #16815f;
+}
+
+.wishlistGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.wishlistCard {
+  border: 1px solid #eee;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: white;
+
+  transition: 0.3s;
+}
+
+.wishlistCard:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.wishlistImage {
+  width: 100%;
+
+  height: 180px;
+
+  background: #f5f5f5;
+}
+
+.wishlistImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.wishlistInfo {
+  padding: 15px;
+}
+
+.wishlistInfo h3 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+}
+
+.wishlistInfo p {
+  margin: 0 0 12px;
+
+  color: #16815f;
+
+  font-weight: 600;
+}
+
+.removeWishlist {
+  border: none;
+
+  background: transparent;
+
+  color: #d9534f;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.passwordSection {
+  max-width: 600px;
+}
+
+.passwordSection h2 {
+  margin-bottom: 8px;
+}
+
+.passwordSection > p {
+  color: #777;
+
+  margin-bottom: 30px;
+}
+
+.passwordSection .inputGroup {
+  margin-bottom: 20px;
+}
+
+.passwordSection .saveButton {
+  margin-top: 10px;
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .profileContainer {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .menu {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logout {
+    margin-top: 0;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .pageHeader {
+    padding: 40px 7%;
+  }
+
+  .pageHeader h1 {
+    font-size: 32px;
+  }
+
+  .profileContainer {
+    width: 92%;
+
+    margin: 25px auto 50px;
+  }
+
+  .mainContent {
+    padding: 20px;
+
+    border-radius: 15px;
+  }
+
+  .contentHeader {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .contentHeader h2 {
+    font-size: 23px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inputGroupFull {
+    grid-column: auto;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .wishlistGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .photoSection {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  /* Orders Mobile */
+
+  .orderHeader {
+    padding: 16px;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .orderHeader h3 {
+    font-size: 15px;
+  }
+
+  .orderItems {
+    padding: 0 16px;
+  }
+
+  .orderItem {
+    gap: 12px;
+  }
+
+  .orderItem img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .orderItem h4 {
+    font-size: 14px;
+  }
+
+  .orderTotal {
+    padding: 16px;
+  }
+
+  .orderTotal strong {
+    font-size: 17px;
+  }
+}
