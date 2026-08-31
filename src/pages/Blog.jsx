@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./Blog.module.css";
 import Navbar from "../components/Navbar.jsx";
 import AnnouncementBar from "../components/AnnouncementBar.jsx";
@@ -71,12 +70,19 @@ function Blog() {
   return (
     <>
       <AnnouncementBar />
+
       <Navbar />
+
       <div className={styles.blogPage}>
-        {/* Hero Section */}
+
+        {/* ================= HERO SECTION ================= */}
+
         <section className={styles.blogHero}>
           <div className={styles.blogHeroContent}>
-            <p className={styles.blogSubtitle}>OUR BLOG</p>
+
+            <p className={styles.blogSubtitle}>
+              OUR BLOG
+            </p>
 
             <h1>
               Inspiration for
@@ -84,50 +90,103 @@ function Blog() {
             </h1>
 
             <p className={styles.blogIntro}>
-              Discover furniture ideas, interior design inspiration, styling
-              tips, and expert advice to help you create a home you love.
+              Discover furniture ideas, interior design inspiration,
+              styling tips, and expert advice to help you create a
+              home you love.
             </p>
+
           </div>
         </section>
 
-        {/* Articles Section */}
-        <section className={styles.blogSection}>
-          <div className={styles.blogHeading}>
-            <h2>Latest Articles</h2>
 
-            <p>Inspiration, ideas, and tips for creating beautiful spaces.</p>
+        {/* ================= ARTICLES SECTION ================= */}
+
+        <section className={styles.blogSection}>
+
+          <div className={styles.blogHeading}>
+
+            <h2>
+              Latest Articles
+            </h2>
+
+            <p>
+              Inspiration, ideas, and tips for creating beautiful spaces.
+            </p>
+
           </div>
 
-          {/* Blog Cards */}
+
+          {/* ================= BLOG CARDS ================= */}
+
           <div className={styles.blogGrid}>
+
             {posts.map((post) => (
-              <article className={styles.blogCard} key={post.id}>
+
+              <article
+                className={styles.blogCard}
+                key={post.id}
+              >
+
                 {/* Image */}
+
                 <div className={styles.blogImage}>
-                  <img src={post.image} alt={post.title} />
+
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                  />
+
                 </div>
+
 
                 {/* Card Content */}
-                <div className={styles.blogContent}>
-                  <div className={styles.blogMeta}>
-                    <span>{post.category}</span>
 
-                    <span>{post.date}</span>
+                <div className={styles.blogContent}>
+
+                  <div className={styles.blogMeta}>
+
+                    <span>
+                      {post.category}
+                    </span>
+
+                    <span>
+                      {post.date}
+                    </span>
+
                   </div>
 
-                  <h3>{post.title}</h3>
 
-                  <p>{post.description}</p>
+                  <h3>
+                    {post.title}
+                  </h3>
 
-                  <Link to={`/blog/${post.id}`} className={styles.readMore}>
+
+                  <p>
+                    {post.description}
+                  </p>
+
+
+                  {/* Read More */}
+
+                  <button
+                    type="button"
+                    className={styles.readMore}
+                  >
                     Read More →
-                  </Link>
+                  </button>
+
                 </div>
+
               </article>
+
             ))}
+
           </div>
+
         </section>
+
       </div>
+
       <Footer />
     </>
   );

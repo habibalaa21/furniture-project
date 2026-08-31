@@ -102,7 +102,7 @@ export default function Navbar() {
             />
           </span>
 
-          Furniture.
+          FurniHome.
         </Link>
 
         {/* ================= DESKTOP NAV ================= */}

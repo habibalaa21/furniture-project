@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
         <span className={styles.label}>WHY CHOOSE US</span>
 
         <h2>
-          Why Choose <span>Furniture.</span>
+          Why Choose <span>FurniHome.</span>
         </h2>
 
         <p>

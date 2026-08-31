@@ -4,6 +4,42 @@
 }
 
 /* =========================
+   CART MESSAGE
+========================= */
+
+.cartMessage {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  z-index: 9999;
+
+  background: #16815f;
+  color: white;
+
+  padding: 14px 22px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  animation: messageSlide 0.3s ease;
+}
+
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
    Section Header
 ========================= */
 
@@ -50,7 +86,6 @@
   line-height: 1.6;
 }
 
-
 /* =========================
    View All Button
 ========================= */
@@ -76,7 +111,6 @@
   gap: 12px;
 }
 
-
 /* =========================
    Products Grid
 ========================= */
@@ -86,7 +120,6 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-
 
 /* =========================
    Product Card
@@ -109,7 +142,6 @@
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
-
 
 /* =========================
    Product Image
@@ -134,12 +166,13 @@
   object-fit: cover;
 
   transition: transform 0.45s ease;
+
+  cursor: pointer;
 }
 
 .card:hover .imageWrapper img {
   transform: scale(1.05);
 }
-
 
 /* =========================
    Add To Cart Button
@@ -187,7 +220,6 @@
   color: white;
 }
 
-
 /* =========================
    Product Information
 ========================= */
@@ -234,7 +266,6 @@
   font-weight: 700;
 }
 
-
 /* =========================
    Tablet
 ========================= */
@@ -245,7 +276,6 @@
     gap: 20px;
   }
 }
-
 
 /* =========================
    Mobile
@@ -295,10 +325,19 @@
   }
 }
 
-
 /* =========================
    Very Small Screens
 ========================= */
+
+@media (max-width: 550px) {
+  .cartMessage {
+    top: 90px;
+    right: 15px;
+    left: 15px;
+
+    text-align: center;
+  }
+}
 
 @media (max-width: 400px) {
   .productsGrid {
@@ -309,3 +348,4 @@
     aspect-ratio: 4 / 3;
   }
 }
+

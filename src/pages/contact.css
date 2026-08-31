@@ -79,6 +79,9 @@
   line-height: 1.8;
 }
 
+
+/* ================= HERO IMAGE ================= */
+
 .contact-hero-icon {
   width: 320px;
   height: 320px;
@@ -93,7 +96,16 @@
 
   background: #dceee6;
 
-  font-size: 100px;
+  overflow: hidden;
+}
+
+.contact-hero-icon img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
 }
 
 
@@ -270,7 +282,8 @@
 
   background: white;
 
-  box-shadow: 0 0 0 3px rgba(22, 129, 95, 0.08);
+  box-shadow:
+    0 0 0 3px rgba(22, 129, 95, 0.08);
 }
 
 .send-button {
@@ -485,8 +498,6 @@
   .contact-hero-icon {
     width: 230px;
     height: 230px;
-
-    font-size: 75px;
   }
 
   .contact-section {
@@ -494,7 +505,6 @@
 
     gap: 50px;
   }
-
 }
 
 
@@ -529,6 +539,7 @@
 
   .form-row {
     grid-template-columns: 1fr;
+
     gap: 0;
   }
 
@@ -553,5 +564,4 @@
   .contact-cta h2 {
     font-size: 34px;
   }
-
 }

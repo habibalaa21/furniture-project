@@ -33,9 +33,9 @@ export default function Hero() {
             <Button variant="primary" withArrow as= {Link} to="/shop">
               Shop Now
             </Button>
-            <Button variant="secondary" as={Link} to="">
+            {/* <Button variant="secondary" as={Link} to="">
               View All Products
-            </Button>
+            </Button> */}
           </div>
 
           <Rating />

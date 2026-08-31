@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./HomeBanner.module.css";
 
 const HomeBanner = () => {
@@ -22,12 +23,16 @@ const HomeBanner = () => {
           Discover our latest furniture collection.
         </p>
 
-        <button className={styles.shopButton}>
+        <Link
+          to="/shop"
+          className={styles.shopButton}
+        >
           Shop Now <span>→</span>
-        </button>
+        </Link>
       </div>
     </section>
   );
 };
 
 export default HomeBanner;
+

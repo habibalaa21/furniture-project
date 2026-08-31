@@ -9,9 +9,11 @@
 .about-hero {
   min-height: 360px;
   background: #f3f8f5;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 60px 10%;
   gap: 50px;
 }
@@ -51,11 +53,14 @@
 .hero-image {
   width: 390px;
   height: 250px;
+
   background: #dfede7;
   border-radius: 35px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
 }
 
@@ -70,14 +75,17 @@
 
 .our-story {
   padding: 90px 10%;
+
   display: flex;
   align-items: center;
+
   gap: 80px;
 }
 
 .story-image {
   width: 50%;
   height: 450px;
+
   border-radius: 25px;
   overflow: hidden;
 }
@@ -94,16 +102,21 @@
 
 .section-title {
   color: #147d5a;
+
   font-size: 14px;
   font-weight: 600;
+
   letter-spacing: 2px;
+
   margin-bottom: 15px;
 }
 
 .story-content h2,
 .section-heading h2 {
   font-size: 40px;
+
   line-height: 1.25;
+
   margin: 0 0 25px;
 }
 
@@ -114,25 +127,47 @@
 
 .story-content p:not(.section-title) {
   color: #68757d;
+
   line-height: 1.8;
+
   margin-bottom: 15px;
 }
 
-.story-content button,
-.about-cta button {
+
+/* ================= STORY BUTTON / LINK ================= */
+
+.story-content .discover-button,
+.about-cta .shop-now-button {
+  display: inline-block;
+
   background: #147d5a;
   color: white;
+
   border: none;
+
   padding: 14px 25px;
+
   border-radius: 25px;
+
   font-size: 15px;
+  font-family: inherit;
+  font-weight: 500;
+
   cursor: pointer;
+
   margin-top: 15px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
-.story-content button:hover,
-.about-cta button:hover {
+.story-content .discover-button:hover,
+.about-cta .shop-now-button:hover {
   background: #106b4d;
+  transform: translateY(-2px);
 }
 
 
@@ -140,48 +175,64 @@
 
 .why-us {
   background: #f7f9f8;
+
   padding: 90px 10%;
 }
 
 .section-heading {
   text-align: center;
+
   max-width: 650px;
+
   margin: 0 auto 50px;
 }
 
 .section-heading > p:last-child {
   color: #68757d;
+
   line-height: 1.7;
 }
 
 .features {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 20px;
 }
 
 .feature-card {
   background: white;
+
   border: 1px solid #e5e5e5;
+
   border-radius: 20px;
+
   padding: 30px 25px;
+
   transition: 0.3s;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
+
   border-color: #147d5a;
 }
 
 .feature-icon {
   width: 55px;
   height: 55px;
+
   border-radius: 50%;
+
   background: #e5f2ed;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 25px;
+
   margin-bottom: 20px;
 }
 
@@ -191,7 +242,9 @@
 
 .feature-card p {
   color: #68757d;
+
   line-height: 1.6;
+
   font-size: 14px;
 }
 
@@ -200,15 +253,20 @@
 
 .statistics {
   background: #147d5a;
+
   color: white;
+
   padding: 55px 10%;
+
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   text-align: center;
 }
 
 .stat {
-  border-right: 1px solid rgba(255,255,255,0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .stat:last-child {
@@ -217,11 +275,13 @@
 
 .stat h2 {
   font-size: 38px;
+
   margin: 0 0 5px;
 }
 
 .stat p {
   margin: 0;
+
   opacity: 0.9;
 }
 
@@ -234,29 +294,37 @@
 
 .values-container {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
 .value-card {
   border: 1px solid #e5e5e5;
+
   border-radius: 20px;
+
   padding: 35px;
 }
 
 .value-card span {
   color: #147d5a;
+
   font-weight: 600;
+
   font-size: 14px;
 }
 
 .value-card h3 {
   font-size: 22px;
+
   margin: 15px 0 10px;
 }
 
 .value-card p {
   color: #68757d;
+
   line-height: 1.7;
 }
 
@@ -265,27 +333,66 @@
 
 .about-cta {
   margin: 20px 10% 80px;
+
   background: #e5f2ed;
+
   border-radius: 30px;
+
   padding: 65px;
+
   text-align: center;
 }
 
 .about-cta h2 {
   font-size: 35px;
+
   margin-bottom: 15px;
 }
 
 .about-cta p {
   color: #68757d;
+
   margin-bottom: 10px;
+}
+
+
+/* ================= CTA SHOP BUTTON ================= */
+
+.about-cta .shop-now-button {
+  display: inline-block;
+
+  background: #147d5a;
+  color: white;
+
+  padding: 14px 25px;
+
+  border-radius: 25px;
+
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  margin-top: 15px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.about-cta .shop-now-button:hover {
+  background: #106b4d;
+
+  transform: translateY(-2px);
 }
 
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
-
   .about-hero {
     padding: 50px 6%;
   }
@@ -307,12 +414,10 @@
   .statistics {
     padding: 50px 6%;
   }
-
 }
 
 
 @media (max-width: 768px) {
-
   .about-hero {
     flex-direction: column;
     align-items: flex-start;
@@ -341,6 +446,7 @@
 
   .statistics {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 30px;
   }
 
@@ -354,7 +460,7 @@
 
   .about-cta {
     margin: 20px 6% 60px;
+
     padding: 40px 25px;
   }
-
 }

@@ -146,6 +146,10 @@
   color: var(--color-text);
 }
 
+.clickableImage {
+  cursor: pointer;
+}
+
 @media (max-width: 1100px) {
   .secondaryCard {
     right: 0;

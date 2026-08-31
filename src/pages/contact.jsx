@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import {
   Mail,
   Phone,
@@ -87,8 +88,13 @@ function Contact() {
 
           </div>
 
+          {/* HERO IMAGE */}
+
           <div className="contact-hero-icon">
-            💬
+            <img
+              src="/images/contactus.jpg"
+              alt="Contact us"
+            />
           </div>
 
         </section>
@@ -127,6 +133,7 @@ function Contact() {
 
               <div>
                 <span>Email Us</span>
+
                 <strong>
                   hello@furniture.com
                 </strong>
@@ -145,6 +152,7 @@ function Contact() {
 
               <div>
                 <span>Call Us</span>
+
                 <strong>
                   +20 100 123 4567
                 </strong>
@@ -163,6 +171,7 @@ function Contact() {
 
               <div>
                 <span>Visit Us</span>
+
                 <strong>
                   Cairo, Egypt
                 </strong>
@@ -181,6 +190,7 @@ function Contact() {
 
               <div>
                 <span>Working Hours</span>
+
                 <strong>
                   Sat - Thu, 9:00 AM - 8:00 PM
                 </strong>
@@ -303,6 +313,7 @@ function Contact() {
               {submitted && (
 
                 <div className="success-message">
+
                   <strong>
                     Message sent successfully! ✓
                   </strong>
@@ -311,6 +322,7 @@ function Contact() {
                     Thank you for contacting us.
                     We'll get back to you soon.
                   </span>
+
                 </div>
 
               )}
