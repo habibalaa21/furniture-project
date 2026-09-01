@@ -140,32 +140,23 @@ Open the local development URL provided by Vite in your browser.
 
 ### Home Page
 
-*Add Home page screenshot here.*
+![Home Page](./home.png)
 
 ### Shop Page
 
-*Add Shop page screenshot here.*
+![Shop Page](./shop.png)
 
-### Product Details
+### About Us
 
-*Add Product Details screenshot here.*
+![About Us](./about.png)
 
-### Login & Registration
+### Contact Us
 
-*Add Login and Registration screenshots here.*
+![Contact Us](./contact.png)
 
-### Profile
+### Blog
 
-*Add Profile page screenshot here.*
-
-### Wishlist
-
-*Add Wishlist screenshot here.*
-
-### Shopping Cart
-
-*Add Shopping Cart screenshot here.*
-
+![Blog](./blog.png)
 ---
 
 ## Team
